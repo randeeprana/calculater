@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./ButtonsContainer.module.css";
 
 const ButtonsContainer = ({ onButtonClick }) => {
@@ -23,8 +24,9 @@ const ButtonsContainer = ({ onButtonClick }) => {
 
   return (
     <div className={styles.buttonsContainer}>
-      {buttonNames.map((buttonName) => (
+      {buttonNames.map((buttonName, index) => (
         <button
+          key={index} // Adding unique key prop
           className={styles.button}
           onClick={() => onButtonClick(buttonName)}
         >
